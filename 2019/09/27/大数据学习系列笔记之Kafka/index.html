@@ -56,18 +56,19 @@
   };
 </script>
 
-  <meta name="description" content="title: 大数据学习系列笔记之Kafka 1、kafka中的基本概念1)broker:一个独立的kafka服务器称为一个broker 2)集群:多个broker组成一个kafka集群 3)消息(Message):kafka中的数据单元，通过&amp;lt;topic partition offset&amp;gt; 三元组可以找到在kafka中唯一对应的一条消息 4)批次:消息被分批次写入kafka，批次就是">
+  <meta name="description" content="1、kafka中的基本概念1)broker:一个独立的kafka服务器称为一个broker 2)集群:多个broker组成一个kafka集群 3)消息(Message):kafka中的数据单元，通过&amp;lt;topic partition offset&amp;gt; 三元组可以找到在kafka中唯一对应的一条消息 4)批次:消息被分批次写入kafka，批次就是一组消息 5)副本(replica):冗余机制">
+<meta name="keywords" content="kafka">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Sunshineの博客">
-<meta property="og:url" content="http://yoursite.com/2019/09/27/kafka/index.html">
+<meta property="og:title" content="大数据学习系列笔记之Kafka">
+<meta property="og:url" content="http://yoursite.com/2019/09/27/大数据学习系列笔记之Kafka/index.html">
 <meta property="og:site_name" content="Sunshineの博客">
-<meta property="og:description" content="title: 大数据学习系列笔记之Kafka 1、kafka中的基本概念1)broker:一个独立的kafka服务器称为一个broker 2)集群:多个broker组成一个kafka集群 3)消息(Message):kafka中的数据单元，通过&amp;lt;topic partition offset&amp;gt; 三元组可以找到在kafka中唯一对应的一条消息 4)批次:消息被分批次写入kafka，批次就是">
+<meta property="og:description" content="1、kafka中的基本概念1)broker:一个独立的kafka服务器称为一个broker 2)集群:多个broker组成一个kafka集群 3)消息(Message):kafka中的数据单元，通过&amp;lt;topic partition offset&amp;gt; 三元组可以找到在kafka中唯一对应的一条消息 4)批次:消息被分批次写入kafka，批次就是一组消息 5)副本(replica):冗余机制">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-09-27T14:28:53.407Z">
+<meta property="og:updated_time" content="2019-09-27T14:47:24.247Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Sunshineの博客">
-<meta name="twitter:description" content="title: 大数据学习系列笔记之Kafka 1、kafka中的基本概念1)broker:一个独立的kafka服务器称为一个broker 2)集群:多个broker组成一个kafka集群 3)消息(Message):kafka中的数据单元，通过&amp;lt;topic partition offset&amp;gt; 三元组可以找到在kafka中唯一对应的一条消息 4)批次:消息被分批次写入kafka，批次就是">
-  <link rel="canonical" href="http://yoursite.com/2019/09/27/kafka/">
+<meta name="twitter:title" content="大数据学习系列笔记之Kafka">
+<meta name="twitter:description" content="1、kafka中的基本概念1)broker:一个独立的kafka服务器称为一个broker 2)集群:多个broker组成一个kafka集群 3)消息(Message):kafka中的数据单元，通过&amp;lt;topic partition offset&amp;gt; 三元组可以找到在kafka中唯一对应的一条消息 4)批次:消息被分批次写入kafka，批次就是一组消息 5)副本(replica):冗余机制">
+  <link rel="canonical" href="http://yoursite.com/2019/09/27/大数据学习系列笔记之Kafka/">
 
 
 <script id="page-configurations">
@@ -81,7 +82,7 @@
   };
 </script>
 
-  <title> | Sunshineの博客</title>
+  <title>大数据学习系列笔记之Kafka | Sunshineの博客</title>
   
 
 
@@ -208,7 +209,7 @@
       
     
 
-    <a href="/tags/" rel="section"><i class="menu-item-icon fa fa-fw fa-tags"></i> <br>标签<span class="badge">0</span></a>
+    <a href="/tags/" rel="section"><i class="menu-item-icon fa fa-fw fa-tags"></i> <br>标签<span class="badge">1</span></a>
 
   </li>
       
@@ -282,7 +283,7 @@
   
   
   <div class="post-block post">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/09/27/kafka/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/09/27/大数据学习系列笔记之Kafka/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Sunshine">
@@ -294,7 +295,7 @@
       <meta itemprop="name" content="Sunshineの博客">
     </span>
       <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">
+        <h1 class="post-title" itemprop="name headline">大数据学习系列笔记之Kafka
 
           
         </h1>
@@ -310,7 +311,7 @@
                 
               
 
-              <time title="创建时间：2019-09-27 22:28:19 / 修改时间：22:28:53" itemprop="dateCreated datePublished" datetime="2019-09-27T22:28:19+08:00">2019-09-27</time>
+              <time title="创建时间：2019-09-27 22:44:38 / 修改时间：22:47:24" itemprop="dateCreated datePublished" datetime="2019-09-27T22:44:38+08:00">2019-09-27</time>
             </span>
           
             
@@ -348,8 +349,7 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <p>title: 大数据学习系列笔记之Kafka</p>
-<h2 id="1、kafka中的基本概念"><a href="#1、kafka中的基本概念" class="headerlink" title="1、kafka中的基本概念"></a>1、kafka中的基本概念</h2><pre><code>1)broker:一个独立的kafka服务器称为一个broker
+        <h2 id="1、kafka中的基本概念"><a href="#1、kafka中的基本概念" class="headerlink" title="1、kafka中的基本概念"></a>1、kafka中的基本概念</h2><pre><code>1)broker:一个独立的kafka服务器称为一个broker
 2)集群:多个broker组成一个kafka集群
 3)消息(Message):kafka中的数据单元，通过&lt;topic partition offset&gt; 三元组可以找到在kafka中唯一对应的一条消息
 4)批次:消息被分批次写入kafka，批次就是一组消息
@@ -519,7 +519,7 @@ Kafka消费者经常会做一些高延迟的操作，比如把数据写到数据
     <strong>本文作者： </strong>Sunshine</li>
   <li class="post-copyright-link">
     <strong>本文链接：</strong>
-    <a href="http://yoursite.com/2019/09/27/kafka/">http://yoursite.com/2019/09/27/kafka/</a>
+    <a href="http://yoursite.com/2019/09/27/大数据学习系列笔记之Kafka/" title="大数据学习系列笔记之Kafka">http://yoursite.com/2019/09/27/大数据学习系列笔记之Kafka/</a>
   </li>
   <li class="post-copyright-license">
     <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener" target="_blank"><i class="fa fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！</li>
@@ -529,21 +529,30 @@ Kafka消费者经常会做一些高延迟的操作，比如把数据写到数据
       
 
       <footer class="post-footer">
+          
+            
+          
+          <div class="post-tags">
+            
+              <a href="/tags/kafka/" rel="tag"># kafka</a>
+            
+          </div>
+        
 
         
 
           <div class="post-nav">
             <div class="post-nav-next post-nav-item">
               
-                <a href="/2019/09/27/Sunhine/" rel="next" title="">
-                  <i class="fa fa-chevron-left"></i> 
-                </a>
-              
             </div>
 
             <span class="post-nav-divider"></span>
 
             <div class="post-nav-prev post-nav-item">
+              
+                <a href="/2019/09/27/Sunshineの博客/" rel="prev" title="Sunshineの博客">
+                  Sunshineの博客 <i class="fa fa-chevron-right"></i>
+                </a>
               
             </div>
           </div>
@@ -613,6 +622,15 @@ Kafka消费者经常会做一些高延迟的操作，比如把数据写到数据
           <span class="site-state-item-count">2</span>
           <span class="site-state-item-name">日志</span>
         </a>
+      </div>
+    
+      
+      
+      <div class="site-state-item site-state-tags">
+        
+        <span class="site-state-item-count">1</span>
+        <span class="site-state-item-name">标签</span>
+        
       </div>
     
   </nav>
